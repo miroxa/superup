@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#A simple guessing game home exersize
+
+#Get a random number < 100
+target=$(($RANDOM % 100))
+
+#Initialize the users guess
+guess=
+
+while [[ $guess -lt 100 ]] ; do
+	read -p "Take a guess: " guess
+	if [[ $guess -gt $target ]]; then
+		echo "Lower!"
+	elif [[ $guess -lt $target ]]; then
+		echo "Higher!"
+	else [[ $guess -eq $target ]]
+		echo "You found it!!!"
+	fi
+done
+
+exit 0
